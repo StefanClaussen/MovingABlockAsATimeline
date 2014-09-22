@@ -30,10 +30,10 @@
     [super viewDidLoad];
     progress=[[UILabel alloc] initWithFrame:CGRectMake(80, 15, 100, 50)];
     progress.textColor=[UIColor redColor];
-    [progress setText:@"Time : 3:00"];
+    [progress setText:@"Time : 25:00"];
     progress.backgroundColor=[UIColor clearColor];
     [self.view addSubview:progress];
-    currMinute=3;
+    currMinute=25;
     currSeconds=00;
     [self start];
     
