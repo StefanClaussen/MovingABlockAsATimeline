@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (strong, nonatomic)UIView *timerBlockView;
 
 @end
 
@@ -37,12 +38,17 @@
     currSeconds=00;
     [self start];
     
+    self.timerBlockView = [[UIView alloc] initWithFrame:CGRectMake(200, 100, 100, 100)];
+    [self.timerBlockView setBackgroundColor:[UIColor redColor]];
+    [self.view addSubview:self.timerBlockView];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 -(void)start
 {
     timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
     
+    [self moveTimerBlock];
 }
 -(void)timerFired
 {
@@ -56,6 +62,7 @@
         else if(currSeconds>0)
         {
             currSeconds -= 1;
+            [self moveTimerBlock];
         }
         if(currMinute > -1)
             [progress setText:[NSString stringWithFormat:@"%@%d%@%02d",@"Time : ",currMinute,@":",currSeconds]];
@@ -64,6 +71,19 @@
     {
         [timer invalidate];
     }
+}
+
+#pragma mark - Moving Timer Block helper methods
+
+- (void)moveTimerBlock
+{
+    CGRect timerBlockFrame = self.timerBlockView.frame;
+    timerBlockFrame.origin.x = 40;    //Finish point of block
+    
+        [UIView animateWithDuration:3.0
+                     animations:^{
+                         self.timerBlockView.frame = timerBlockFrame;
+                     }];
 }
 
 - (void)didReceiveMemoryWarning
