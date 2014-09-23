@@ -9,22 +9,21 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+{
+    UILabel *progress;
+    NSTimer *timer;
+    int currMinute;
+    int currSeconds;
+}
+
 @property (strong, nonatomic)UIView *timerBlockView;
+@property (strong, nonatomic) IBOutlet UIButton *pauseAndPlayButtonLabel;
+@property (nonatomic)BOOL isCountingDown;
+
 
 @end
 
 @implementation ViewController
-
-
-
-//@interface ViewController()
-//{
-//    UILabel *progress;
-//    NSTimer *timer;
-//    int currMinute;
-//    int currSeconds;
-//}
-//@end
 
 - (void)viewDidLoad
 {
@@ -36,7 +35,8 @@
     [self.view addSubview:progress];
     currMinute=25;
     currSeconds=00;
-    [self start];
+    
+    [self setButtonToPlay];
     
     self.timerBlockView = [[UIView alloc] initWithFrame:CGRectMake(200, 100, 100, 100)];
     [self.timerBlockView setBackgroundColor:[UIColor redColor]];
@@ -44,12 +44,19 @@
     
     // Do any additional setup after loading the view, typically from a nib.
 }
+
 -(void)start
 {
     timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
     
     [self moveTimerBlock];
 }
+
+- (void)pauseTimer
+{
+    
+}
+
 -(void)timerFired
 {
     if((currMinute>0 || currSeconds>=0) && currMinute>=0)
@@ -72,6 +79,31 @@
         [timer invalidate];
     }
 }
+
+#pragma mark - Starting and pausing the timer
+
+- (void)setButtonToPlay
+{
+    [self.pauseAndPlayButtonLabel setTitle:@"Play" forState:UIControlStateNormal];
+}
+
+- (void)setButtonToPause
+{
+    [self.pauseAndPlayButtonLabel setTitle:@"Pause" forState:UIControlStateHighlighted];
+}
+
+- (IBAction)playButtonPressed:(UIButton *)sender
+{
+    [self start];
+    self.isCountingDown = YES;
+    [self.pauseAndPlayButtonLabel setTitle:@"Pause" forState:UIControlStateNormal];
+}
+
+- (IBAction)pauseButtonPressed:(UIButton *)sender
+{
+    
+}
+
 
 #pragma mark - Moving Timer Block helper methods
 

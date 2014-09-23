@@ -20,7 +20,7 @@
 		F84452E919D059CF00D99F3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84452C819D059CF00D99F3F /* Foundation.framework */; };
 		F84452EA19D059CF00D99F3F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84452CC19D059CF00D99F3F /* UIKit.framework */; };
 		F84452F219D059CF00D99F3F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F84452F019D059CF00D99F3F /* InfoPlist.strings */; };
-		F84452F419D059CF00D99F3F /* TimerPlayingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F84452F319D059CF00D99F3F /* TimerPlayingTests.m */; };
+		F884C8DF19D1737B00EBA010 /* ViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F884C8DE19D1737B00EBA010 /* ViewControllerTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 		F84452E719D059CF00D99F3F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F84452EF19D059CF00D99F3F /* TimerPlayingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimerPlayingTests-Info.plist"; sourceTree = "<group>"; };
 		F84452F119D059CF00D99F3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F84452F319D059CF00D99F3F /* TimerPlayingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerPlayingTests.m; sourceTree = "<group>"; };
+		F884C8DE19D1737B00EBA010 /* ViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +137,8 @@
 		F84452ED19D059CF00D99F3F /* TimerPlayingTests */ = {
 			isa = PBXGroup;
 			children = (
-				F84452F319D059CF00D99F3F /* TimerPlayingTests.m */,
 				F84452EE19D059CF00D99F3F /* Supporting Files */,
+				F884C8DE19D1737B00EBA010 /* ViewControllerTest.m */,
 			);
 			path = TimerPlayingTests;
 			sourceTree = "<group>";
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F84452F419D059CF00D99F3F /* TimerPlayingTests.m in Sources */,
+				F884C8DF19D1737B00EBA010 /* ViewControllerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +456,7 @@
 				F84452F919D059CF00D99F3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F84452FA19D059CF00D99F3F /* Build configuration list for PBXNativeTarget "TimerPlayingTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +465,7 @@
 				F84452FC19D059CF00D99F3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

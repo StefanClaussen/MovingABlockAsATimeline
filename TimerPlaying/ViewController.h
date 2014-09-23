@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-{
-    UILabel *progress;
-    NSTimer *timer;
-    int currMinute;
-    int currSeconds;
-}
+//{
+//    UILabel *progress;
+//    NSTimer *timer;
+//    int currMinute;
+//    int currSeconds;
+//}
 
 @end

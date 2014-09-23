@@ -1,18 +1,18 @@
 //
-//  TimerPlayingTests.m
-//  TimerPlayingTests
+//  ViewControllerTest.m
+//  TimerPlaying
 //
-//  Created by Stefan Claussen on 22/09/2014.
+//  Created by Stefan Claussen on 23/09/2014.
 //  Copyright (c) 2014 One foot after the other. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface TimerPlayingTests : XCTestCase
+@interface ViewControllerTest : XCTestCase
 
 @end
 
-@implementation TimerPlayingTests
+@implementation ViewControllerTest
 
 - (void)setUp
 {
@@ -26,9 +26,16 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-}
+//testTimerCountsdownFor25Minutes
+
+//testTimerViewMovesFromRightToLeftOver25Minutes
+
+//testButtonIsSetToPlayWhenViewLoads
+
+//testCanPlay/StartTheTimer
+
+//testCanPauseTheTimer
+
+
 
 @end
