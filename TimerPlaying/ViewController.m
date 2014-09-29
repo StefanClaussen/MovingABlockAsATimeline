@@ -47,14 +47,18 @@
 
 -(void)start
 {
-    timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
+    timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(moveTimerBlock) userInfo:nil repeats:YES];
     
     [self moveTimerBlock];
 }
 
-- (void)pauseTimer
+- (void)stopTimer
 {
-    
+    if(timer != nil)
+    {
+        [timer invalidate];
+        timer = nil;
+    }
 }
 
 -(void)timerFired
@@ -99,6 +103,12 @@
     [self.pauseAndPlayButtonLabel setTitle:@"Pause" forState:UIControlStateNormal];
 }
 
+- (IBAction)stopButtonPressed:(UIButton *)sender
+{
+    [self stopTimer];
+}
+
+
 - (IBAction)pauseButtonPressed:(UIButton *)sender
 {
     
@@ -112,7 +122,7 @@
     CGRect timerBlockFrame = self.timerBlockView.frame;
     timerBlockFrame.origin.x = 40;    //Finish point of block
     
-        [UIView animateWithDuration:3.0
+        [UIView animateWithDuration:10.0
                      animations:^{
                          self.timerBlockView.frame = timerBlockFrame;
                      }];
